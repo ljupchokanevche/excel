@@ -4,8 +4,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.example.domain.*;
-import org.example.mappers.*;
+import org.example.domain.ExcelRowData;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -54,30 +53,7 @@ public class ExcelWorkerService {
                 }
             });
 
-            ExcelRowData rowData;
-
-            switch (sheet.getSheetName()) {
-                case "Products":
-                    Product product = ProductMapper.mapToProduct(data);
-                    rowData = new ExcelRowData(sheet.getSheetName(), product);
-                    break;
-                case "GTIN":
-                    GTIN gtin = GTINMapper.mapToGTIN(data);
-                    rowData = new ExcelRowData(sheet.getSheetName(), gtin);
-                    break;
-                case "Images":
-                    Image image = ImageMapper.mapToImage(data);
-                    rowData = new ExcelRowData(sheet.getSheetName(), image);
-                    break;
-                case "Prices":
-                    Price price = PriceMapper.mapToPrice(data);
-                    rowData = new ExcelRowData(sheet.getSheetName(), price);
-                    break;
-                default:
-                    BaseModel baseModel = BaseModelMapper.mapToBaseModel(data);
-                    rowData = new ExcelRowData(sheet.getSheetName(), baseModel);
-                    break;
-            }
+            ExcelRowData rowData = new ExcelRowData(sheet.getSheetName(), data);
 
             objects.add(rowData);
         }
