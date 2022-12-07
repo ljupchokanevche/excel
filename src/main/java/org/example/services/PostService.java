@@ -12,6 +12,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * Service for creating web request.
+ */
 public class PostService {
 
     private static final String URL = "https://hh7bty37dbpkfgclxm4zefsodi0rzlvg.lambda-url.eu-west-1.on.aws";

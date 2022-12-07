@@ -13,7 +13,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Service for processing the outbound Excel file.
+ */
 public class ExcelWorkerService {
+
      public static List<ExcelRowData> mapGenerator(InputStream file) {
         List<ExcelRowData> objects = new ArrayList<>();
         Workbook workbook;
@@ -28,7 +32,7 @@ public class ExcelWorkerService {
                 sheetWorker(sheet, objects);
             }
         } catch (IOException e) {
-            throw new RuntimeException("This is not an excel file");
+            throw new RuntimeException(e);
         }
 
         return objects;

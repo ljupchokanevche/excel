@@ -7,8 +7,11 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-@RequiredArgsConstructor
+/**
+ * Entity for processing the post request body.
+ */
 @Getter
+@RequiredArgsConstructor
 public class PostRequestModel {
 
     private final UUID transaction;

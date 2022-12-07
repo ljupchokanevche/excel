@@ -6,8 +6,11 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.Map;
 
-@RequiredArgsConstructor
+/**
+ * Entity for holding the row data and sheet name.
+ */
 @Getter
+@RequiredArgsConstructor
 public class ExcelRowData {
 
     @JsonProperty("document-type")

@@ -4,6 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 
+/**
+ * Helper service for creating a json object out of POJOs.
+ */
 public class JSONMapperService {
 
     public static String convertToJSON(Object object) {
